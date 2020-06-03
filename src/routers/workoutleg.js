@@ -1,32 +1,32 @@
 const express = require('express')
-const Workout = require('../model/workout')
+const Leg = require('../model/workoutleg')
 
 const router = new express.Router();
 
 
 
-router.post('/workout', async(req,res)=>{
+router.post('/workout/leg', async(req,res)=>{
 
-    const workout = new Workout(req.body)
+    const leg = new Leg(req.body)
 
     try {
-        await workout.save()
-        res.status(201).send(workout)
+        await leg.save()
+        res.status(201).send(leg)
     } catch (error) {
         res.status(500).send()
         
     }
 })
 
-router.get('/workout',async(req,res)=>{
+router.get('/workout/leg',async(req,res)=>{
     try {
-        const workout = await Workout.find()
+        const leg = await Leg.find()
 
-        if(workout == null ){
+        if(leg == null ){
             res.status(404).send({error :' Does not contain any workout'})
         }
 
-        res.send(workout)
+        res.send(leg)
     } catch (error) {
         res.status(500).send()
         

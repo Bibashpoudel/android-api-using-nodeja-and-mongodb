@@ -3,7 +3,7 @@
 const mongooes = require('mongoose')
 
 
-const workOut = mongooes.model('workout',{
+const leg = mongooes.model('abs',{
    
     image:{
         type:String,
@@ -21,4 +21,4 @@ const workOut = mongooes.model('workout',{
 })
 
 
-module.exports=workOut
+module.exports=leg

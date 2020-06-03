@@ -1,7 +1,9 @@
 const express = require('express')
 require('./db/mongooes')
-const userRouter =require('./routers/dite')
-const taskRouter = require('./routers/workout')
+const diteRouter =require('./routers/dite')
+const absRouter = require('./routers/workoutabs')
+const armRouter = require('./routers/workoutarm')
+const legRouter = require('./routers/workoutleg')
 
 
 
@@ -14,8 +16,10 @@ const port = process.env.PORT
 
 
 app.use(express.json())
-app.use(userRouter)
-app.use(taskRouter)
+app.use(diteRouter)
+app.use(absRouter)
+app.use(armRouter)
+app.use(legRouter)
 
 
 
